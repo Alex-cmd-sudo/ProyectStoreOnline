@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registro.fragment.Formulario"
+    android:id="@+id/fragment_formulario">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZüéáíóúñÑ"
+                android:hint="Nombre"
+                android:maxLength="50"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_paterno"
+                android:hint="Apellido Paterno"
+                android:maxLength="50"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZüéáíóúñÑ"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/colorPrimary"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/et_materno"
+                android:hint="Apellido Materno"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZüéáíóúñÑ"
+                android:maxLength="50"
+                android:textColorHint="@color/colorPrimary"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/et_correo"
+                android:hint="Correo"
+                android:textColorHint="@color/colorPrimary"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:maxLength="50"
+                android:digits="abcdefghijklmnopqrstuvwxyz@._-1234567890·$%!'?¿\|\#~/()"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/et_contrasena"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:hint="Contraseña"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                android:inputType="textPassword"
+                android:maxLength="50"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_confirmacion"
+                android:hint="Confirmar contraseña"
+                android:inputType="textPassword"
+                android:textColorHint="@color/colorPrimary"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:maxLength="50"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                android:layout_height="wrap_content"/>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/img_anverso"
+                    android:src="@drawable/credendicala"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"/>
+
+                <ImageView
+                    android:id="@+id/img_reverso"
+                    android:src="@drawable/credencialr"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"/>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_anverso"
+                    android:layout_marginTop="20dp"
+                    android:text="Anverso"
+                    android:layout_margin="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!--<TextView
+                    android:layout_marginTop="20dp"
+                    android:text="                           "
+                    android:layout_gravity=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>-->
+
+                <Button
+                    android:id="@+id/btn_reverso"
+                    android:text="Reverso"
+                    android:layout_margin="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="INE"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Switch
+                    android:trackTint="@color/blanco"
+                    android:thumbTint="@color/blanco"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/identificacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""/>
+
+                <TextView
+                    android:text="IFE"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:layout_margin="25dp"
+                    android:id="@+id/ch_ine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INE" />
+
+
+                <RadioButton
+                    android:layout_margin="25dp"
+                    android:id="@+id/ch_ife"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IFE" />
+
+
+                </RadioGroup>-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+
+                <!--<Button
+
+                    android:id="@+id/btn_camara"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="Tomar Foto" />-->
+
+                <Button
+                    android:id="@+id/btn_volver"
+                    android:layout_gravity="center"
+                    android:text="Volver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btn_guardar"
+                    android:layout_gravity="center"
+                    android:text="  Guardar  "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</FrameLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Domicilio.fragment.DomicilioFragment">
+
+
+    <EditText
+        android:id="@+id/et_calle"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:textSize="25sp"
+        android:text="Calle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_numI"
+        android:textSize="25sp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="156dp"
+        android:text="N. Interior"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_colonia"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="Colonia"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toEndOf="@+id/et_cp"
+        app:layout_constraintTop_toBottomOf="@+id/et_numE" />
+
+    <EditText
+        android:id="@+id/et_numE"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        android:text="N. Exterior"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.597"
+        app:layout_constraintStart_toEndOf="@+id/et_numI"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_ciudad"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="92dp"
+        android:text="Ciudad"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cp" />
+
+    <EditText
+        android:id="@+id/et_cp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="92dp"
+        android:textSize="25sp"
+        android:text="C.P."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_numI" />
+
+    <EditText
+        android:id="@+id/et_municipio"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="92dp"
+        android:text="Municipio"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/et_ciudad"
+        app:layout_constraintTop_toBottomOf="@+id/et_colonia" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="476dp"
+        android:text="Guardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_calle" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Cancelar"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
