@@ -33,8 +33,6 @@ import java.security.MessageDigest
  */
 class Formulario: TiFragment<RegistroPresenter, RegistroView>(), RegistroView{
 
-    var ide:String=""
-    var contrasena:String=""
     private val Image_Capture_Code_Anverso = 1
     private val Image_Capture_Code_Reverso = 2
 
@@ -43,11 +41,6 @@ class Formulario: TiFragment<RegistroPresenter, RegistroView>(), RegistroView{
 
     var a:Boolean=false
     var r:Boolean=false
-
-
-
-    var connected = false
-
 
     var mCallback : FormularioCallBacks?=  null
 
@@ -105,7 +98,7 @@ class Formulario: TiFragment<RegistroPresenter, RegistroView>(), RegistroView{
 
                                         if (contrasena.length>=8) {//Confirmar
 
-                                            if (confirmar.length >= 8) {
+                                            //if (confirmar.length >= 8) {
 
                                                 if (contrasena == confirmar) {
 
@@ -167,9 +160,9 @@ class Formulario: TiFragment<RegistroPresenter, RegistroView>(), RegistroView{
                                                         Toast.makeText(context,"Captura ambas caras de tu credencial",Toast.LENGTH_LONG).show()
                                                     }
 
-                                                } else {Toast.makeText(context,"Las contraseñas no son iguales",Toast.LENGTH_LONG).show()}//Contraseña muy pequeña
+                                                } else {Toast.makeText(context,"Contraseñas no coinciden",Toast.LENGTH_LONG).show()}//Contraseña muy pequeña
 
-                                            } else {Toast.makeText(context,"Confirma tu contraseña",Toast.LENGTH_LONG).show()}//Desiguales
+                                            //} else {Toast.makeText(context,"Contraseñas no coinciden",Toast.LENGTH_LONG).show()}//Desiguales
 
 
                                         } else {Toast.makeText(context,"Contraseña debe ser mayor a 8 caracteres",Toast.LENGTH_LONG).show()}//Contraseña corroborada

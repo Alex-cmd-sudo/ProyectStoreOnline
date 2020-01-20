@@ -1,14 +1,17 @@
 package com.example.proyectsoreonline.Registro
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectsoreonline.Domicilio.DomicilioActivity
 import com.example.proyectsoreonline.Domicilio.fragment.DomicilioFragment
+import com.example.proyectsoreonline.Login.LoginActivity
+import com.example.proyectsoreonline.Productos.Productos
 import com.example.proyectsoreonline.R
 import com.example.proyectsoreonline.Registro.fragment.Formulario
 import com.example.proyectsoreonline.Registro.fragment.Login
-import demo.fuzzerrat.equipo1tiendaenlinea.ejemploconsumoservicio.presentation.fragment.ProductosFragment
+import com.example.proyectsoreonline.Productos.fragment.ProductosFragment
 
 
 class RegistroActivity : AppCompatActivity() , Login.LoginCallBacks, Formulario.FormularioCallBacks, ProductosFragment.ProductosCallBacks {
@@ -25,14 +28,11 @@ class RegistroActivity : AppCompatActivity() , Login.LoginCallBacks, Formulario.
 //            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
 //        }
 
-
-
         /*  if (savedInstanceState == null)
             supportFragmentManager.beginTransaction().add(R.id.fragment_formulario,
             Formulario(),Formulario.TAG).commit()
 
     }*/
-
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
@@ -53,7 +53,7 @@ class RegistroActivity : AppCompatActivity() , Login.LoginCallBacks, Formulario.
 
         val fragment = Formulario()
         fragmentTransaction.replace(R.id.contenedor, fragment)
-        //fragmentTransaction.addToBackStack("Formulario")
+//        fragmentTransaction.addToBackStack("Formulario")
         fragmentTransaction.commit()
     }
 
@@ -67,34 +67,49 @@ class RegistroActivity : AppCompatActivity() , Login.LoginCallBacks, Formulario.
         fragmentTransaction.replace(R.id.contenedor, fragment)
         fragmentTransaction.addToBackStack("Login")
         fragmentTransaction.commit()
+
+//        var intent = Intent(this, LoginActivity::class.java)
+//        startActivity(intent)
     }
 
     override fun callFragmentProductos() {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
+//        val fragmentManager = supportFragmentManager
+//        val fragmentTransaction = fragmentManager.beginTransaction()
+//
+//
+//        val fragment = ProductosFragment()
+//        fragmentTransaction.replace(R.id.contenedor, fragment)
+//        fragmentTransaction.addToBackStack("Productos")
+//        fragmentTransaction.commit()
+
+        //login correcto
 
 
-        val fragment = ProductosFragment()
-        fragmentTransaction.replace(R.id.contenedor, fragment)
-        fragmentTransaction.addToBackStack("Productos")
-        fragmentTransaction.commit()
+
+        var intent = Intent(this, Productos::class.java)
+        startActivity(intent)
+        this.finish()
     }
 
     fun callFragmentDomicilio() {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
+//        val fragmentManager = supportFragmentManager
+//        val fragmentTransaction = fragmentManager.beginTransaction()
+//
+//
+//        val fragment = DomicilioFragment()
+//        fragmentTransaction.replace(R.id.contenedor, fragment)
+//        fragmentTransaction.addToBackStack("Domicilio")
+//        fragmentTransaction.commit()
 
-
-        val fragment = DomicilioFragment()
-        fragmentTransaction.replace(R.id.contenedor, fragment)
-        fragmentTransaction.addToBackStack("Domicilio")
-        fragmentTransaction.commit()
+        var intent = Intent(this, DomicilioActivity::class.java)
+        startActivity(intent)
+        this.finish()
     }
-
-
-    override fun tomarFotografia() {
-
-    }
-
+//
+//
+//    override fun tomarFotografia() {
+//
+//    }
+//
 
 }

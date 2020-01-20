@@ -32,8 +32,7 @@ class RegistroPresenter : TiPresenter<RegistroView>() {
             .observeOn(AndroidSchedulers.mainThread())
             .compose(RxTiPresenterUtils.deliverLatestToView(this))
             .subscribe({ response ->
-                (response.getCodigoOperacion().equals("1"))
-                view!!.mostrarResultadoRegistro(response.getCodigoOperacion()!!)
+                if(response.getCodigoOperacion().equals("1"))
                 view!!.mostrarResultadoDeRegistro(response.getMsj()!!)
             }, { throwable ->
                 println(throwable.message)

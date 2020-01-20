@@ -29,9 +29,13 @@ class LoginPresenter : TiPresenter<LoginView>() {
             .observeOn(AndroidSchedulers.mainThread())
             .compose(RxTiPresenterUtils.deliverLatestToView(this))
             .subscribe({ response ->
-                (response.getCodigoOperacion().equals("1"))
-                view!!.mostrarCodigoLogin(response.getCodigoOperacion()!!)
-                view!!.mostrarResultadoDeLogin(response.getMsj()!!)
+                if(response.getCodigoOperacion().equals("1")){//cuando el login es exitoso
+                    view!!.mostrarResultadoDeLogin(response.getMsj()!!)
+                }else{
+                    view!!.loginIncorrecto(response.getMsj()!!)
+                }
+//                view!!.mostrarCodigoLogin(response.getCodigoOperacion()!!)
+//                view!!.mostrarResultadoDeLogin(response.getMsj()!!)
             }, { throwable ->
                 println(throwable.message)
             }))

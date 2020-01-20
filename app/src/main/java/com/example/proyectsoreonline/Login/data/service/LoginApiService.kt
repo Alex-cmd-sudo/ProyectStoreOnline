@@ -1,8 +1,8 @@
 package com.example.proyectsoreonline.Registro.data.service
 
 import com.example.proyectsoreonline.utils.BaseServiceBuilder
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.model.LoginUsuarioRequest
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.model.LoginUsuarioResponse
+import com.example.proyectsoreonline.Login.data.model.LoginUsuarioRequest
+import com.example.proyectsoreonline.Login.data.model.LoginUsuarioResponse
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST

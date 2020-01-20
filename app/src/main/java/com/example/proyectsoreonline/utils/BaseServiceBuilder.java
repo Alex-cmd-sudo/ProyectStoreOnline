@@ -28,9 +28,9 @@ public abstract class BaseServiceBuilder<T extends  Object>{
         okHttpClientBuilder.interceptors().clear();
         okHttpClientBuilder
                 .addInterceptor(loggingInterceptor)
-                .readTimeout(2, TimeUnit.MINUTES)
-                .writeTimeout(2, TimeUnit.MINUTES)
-                .connectTimeout(2, TimeUnit.MINUTES)
+                .readTimeout(5, TimeUnit.SECONDS)
+                .writeTimeout(5, TimeUnit.SECONDS)
+                .connectTimeout(5, TimeUnit.SECONDS)
                 .retryOnConnectionFailure(false)
                 .addInterceptor(interceptor);
 

@@ -38,11 +38,10 @@ internal constructor(context: Context, private val mData: ArrayList<Productoss>)
     // binds the data to the TextView in each row
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        var productoEnLista= mData[position]
-
+//        holder.myTextView  text = animal
         holder.precio.text = productoEnLista.precio.toString()
         holder.producto.text = productoEnLista.nombreProducto
         holder.stock.text = productoEnLista.stock.toString()
-
 
         val imageByteArray = Base64.decode(productoEnLista.img, Base64.DEFAULT)
         Glide.with(mContext)
@@ -50,14 +49,20 @@ internal constructor(context: Context, private val mData: ArrayList<Productoss>)
             .load(imageByteArray)
             .into(  holder.imagenProducto )
 
+        if(holder.stock.text.toString() == "0"){
+            holder.btnAddCarrito.isEnabled = false
+            holder.btnAddCarrito.text = "No disponible"
+        }else{
+            holder.btnAddCarrito.isEnabled = true
+            holder.btnAddCarrito.text = "AGREGAR"
+        }
+
     }
 
     // total number of rows
     override fun getItemCount(): Int {
         return mData.size
     }
-
-
     // stores and recycles views as they are scrolled off screen
     inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
@@ -75,6 +80,7 @@ internal constructor(context: Context, private val mData: ArrayList<Productoss>)
             stock = itemView.findViewById(R.id.txt_stock)
 
             itemView.setOnClickListener(this)
+
 
             btnAddCarrito.setOnClickListener {
                 if (mClickListener != null) mClickListener!!.addToCart(adapterPosition)
@@ -102,55 +108,3 @@ internal constructor(context: Context, private val mData: ArrayList<Productoss>)
         fun addToCart(position: Int)
     }
 }
-
-
-
-
-//class MyAdapter(var lista:ArrayList<Productoss>, var vista: Listener): RecyclerView.Adapter<MyAdapter.miViewHolder>(){
-//
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.miViewHolder {
-//        var vistaXml = LayoutInflater.from(parent.context).inflate(R.layout.item_list,parent,false)
-//        return miViewHolder(vistaXml,vista)
-//    }
-//
-//    override fun getItemCount(): Int {
-//        return lista.size
-//    }
-//
-//    override fun onBindViewHolder(holder: MyAdapter.miViewHolder, position: Int) {
-//        var item = lista.get(position)
-//        holder.enlazar(item,vista)
-//    }
-//
-//    class miViewHolder(itemView: View, view:Listener):RecyclerView.ViewHolder(itemView){
-//
-//
-//        fun enlazar(
-//            productos: Productoss,
-//            vista: Listener
-//        ){
-//
-////            itemView.producto.text = productos.getNom()
-////            itemView.stock.text = productos.getStock().toString()
-////            itemView.precio.text = productos.getPrecio().toString()
-//
-////            var foto:String = ""
-////            foto=productos.getImg()!!
-////
-////            val imageBytes = Base64.decode(foto, Base64.DEFAULT)
-////            val decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-////            val byteArrayOutputStream = ByteArrayOutputStream()
-////
-////            decodedImage.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
-////            val byteArray = byteArrayOutputStream.toByteArray()
-////            var encoded = Base64.encodeToString(byteArray, Base64.DEFAULT)
-////            var myUri = Uri.parse(encoded)
-//
-//
-//            //itemView.img.setImageURI(myUri)
-//
-//            }
-//        }
-//
-//    }

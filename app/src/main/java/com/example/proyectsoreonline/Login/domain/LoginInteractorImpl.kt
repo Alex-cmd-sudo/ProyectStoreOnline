@@ -1,9 +1,9 @@
 package com.example.proyectsoreonline.Registro.domain
 
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.model.LoginUsuarioRequest
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.model.LoginUsuarioResponse
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.repository.LoginRepository
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.repository.LoginRepositoryImpl
+import com.example.proyectsoreonline.Login.data.model.LoginUsuarioRequest
+import com.example.proyectsoreonline.Login.data.model.LoginUsuarioResponse
+import com.example.proyectsoreonline.Login.data.repository.LoginRepository
+import com.example.proyectsoreonline.Login.data.repository.LoginRepositoryImpl
 import rx.Observable
 
 class LoginInteractorImpl : LoginInteractor{

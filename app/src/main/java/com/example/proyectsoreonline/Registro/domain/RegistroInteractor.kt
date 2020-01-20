@@ -2,7 +2,7 @@ package com.example.proyectsoreonline.Registro.domain
 
 
 
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.model.RegistroUsuarioResponse
+import com.example.proyectsoreonline.Registro.data.model.RegistroUsuarioResponse
 import rx.Observable
 
 interface RegistroInteractor {

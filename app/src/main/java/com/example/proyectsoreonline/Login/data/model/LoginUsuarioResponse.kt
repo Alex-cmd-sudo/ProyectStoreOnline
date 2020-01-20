@@ -1,4 +1,4 @@
-package com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.model
+package com.example.proyectsoreonline.Login.data.model
 
 import com.google.gson.annotations.SerializedName
 

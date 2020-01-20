@@ -1,6 +1,6 @@
 package com.example.proyectsoreonline.Registro.domain
 
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.model.LoginUsuarioResponse
+import com.example.proyectsoreonline.Login.data.model.LoginUsuarioResponse
 import rx.Observable
 
 interface LoginInteractor {

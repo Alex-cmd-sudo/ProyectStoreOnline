@@ -1,11 +1,12 @@
-package com.semillero.bancoazteca.equipo2tiendaenlinea.ejemploconsumoservicio.domain;
+package com.example.proyectsoreonline.Productos.domain;
 
 
 
 import com.example.proyectsoreonline.Productos.data.model.GetProductosRequest
 import com.example.proyectsoreonline.Productos.data.model.GetProductosResponse
-import com.semillero.bancoazteca.equipo2tiendaenlinea.ejemploconsumoservicio.data.repository.ProductosRepository
-import com.semillero.bancoazteca.equipo2tiendaenlinea.ejemploconsumoservicio.data.repository.ProductosRepositoryImpl
+import com.example.proyectsoreonline.Productos.data.repository.ProductosRepository
+import com.example.proyectsoreonline.Productos.data.repository.ProductosRepositoryImpl
+import com.example.proyectsoreonline.Productos.domain.ProductosInteractor
 import rx.Observable
 
 class ProductosInteractorImpl : ProductosInteractor {

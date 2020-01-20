@@ -2,9 +2,9 @@ package com.example.proyectsoreonline.Login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.proyectsoreonline.Productos.fragment.ProductosFragment
 import com.example.proyectsoreonline.R
 import com.example.proyectsoreonline.Registro.fragment.Login
-import demo.fuzzerrat.equipo1tiendaenlinea.ejemploconsumoservicio.presentation.fragment.ProductosFragment
 
 class LoginActivity : AppCompatActivity() {
 
@@ -19,5 +19,8 @@ class LoginActivity : AppCompatActivity() {
                     Login(), Login.TAG
                 )
                 .commit()
+
+
+
     }
 }

@@ -1,7 +1,6 @@
 package com.example.proyectsoreonline.Tarjeta.data.model
 
 import com.google.gson.annotations.SerializedName
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.model.RegistroUsuarioRequest
 
 class RegistroTarjetaRequest {
 

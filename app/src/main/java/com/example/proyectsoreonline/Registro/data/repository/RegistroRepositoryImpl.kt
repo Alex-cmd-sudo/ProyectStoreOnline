@@ -1,8 +1,8 @@
 package com.example.proyectsoreonline.Registro.data.repository
 
 import com.example.proyectsoreonline.Registro.data.service.RegistroApiService
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.model.RegistroUsuarioRequest
-import com.semillero.bancoazteca.equipo2tiendaenlinea.registro.data.model.RegistroUsuarioResponse
+import com.example.proyectsoreonline.Registro.data.model.RegistroUsuarioRequest
+import com.example.proyectsoreonline.Registro.data.model.RegistroUsuarioResponse
 import rx.Observable
 
 class RegistroRepositoryImpl : RegistroRepository {

@@ -3,9 +3,7 @@ package com.example.proyectsoreonline
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.example.proyectsoreonline.Registro.RegistroActivity
-import demo.fuzzerrat.equipo1tiendaenlinea.ejemploconsumoservicio.presentation.fragment.ProductosFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,7 +1,7 @@
 package com.example.proyectsoreonline.Productos.presentation.presenter
 
-import com.semillero.bancoazteca.equipo2tiendaenlinea.ejemploconsumoservicio.domain.ProductosInteractor
-import com.semillero.bancoazteca.equipo2tiendaenlinea.ejemploconsumoservicio.domain.ProductosInteractorImpl
+import com.example.proyectsoreonline.Productos.domain.ProductosInteractor
+import com.example.proyectsoreonline.Productos.domain.ProductosInteractorImpl
 import com.example.proyectsoreonline.Productos.presentation.view.ProductosView
 import net.grandcentrix.thirtyinch.TiPresenter
 import net.grandcentrix.thirtyinch.rx.RxTiPresenterSubscriptionHandler
