@@ -63,6 +63,7 @@
         android:layout_marginTop="92dp"
         android:text="Ciudad"
         android:textSize="25sp"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_cp" />
 
@@ -70,6 +71,7 @@
         android:id="@+id/et_cp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:layout_marginStart="44dp"
         android:layout_marginTop="92dp"
         android:textSize="25sp"
@@ -83,6 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="92dp"
+        android:inputType="text"
         android:text="Municipio"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,11 +94,12 @@
         app:layout_constraintTop_toBottomOf="@+id/et_colonia" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_guardarDomicilio"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="476dp"
         android:text="Guardar"
+        android:background="@drawable/borde_redondo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,10 +110,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Cancelar"
+        android:text="Volver"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_guardarDomicilio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.example.proyectsoreonline.Domicilio
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.proyectsoreonline.Domicilio.fragment.DomicilioFragment
 import com.example.proyectsoreonline.Productos.fragment.ProductosFragment
 import com.example.proyectsoreonline.R
 
@@ -15,8 +16,8 @@ class DomicilioActivity : AppCompatActivity() {
             supportFragmentManager
                 .beginTransaction()
                 .add(
-                    R.id.registroDomicilio,
-                    ProductosFragment(), ProductosFragment.TAG
+                    R.id.root_domicilio,
+                    DomicilioFragment(), ProductosFragment.TAG
                 )
                 .commit()
 

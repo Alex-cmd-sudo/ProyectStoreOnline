@@ -2,19 +2,18 @@ package com.example.proyectsoreonline.Registro
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.proyectsoreonline.Carrito.fragment.CarritoFragment
 import com.example.proyectsoreonline.Domicilio.DomicilioActivity
 import com.example.proyectsoreonline.Domicilio.fragment.DomicilioFragment
-import com.example.proyectsoreonline.Login.LoginActivity
 import com.example.proyectsoreonline.Productos.Productos
+import com.example.proyectsoreonline.Productos.fragment.ProductosFragment
 import com.example.proyectsoreonline.R
 import com.example.proyectsoreonline.Registro.fragment.Formulario
 import com.example.proyectsoreonline.Registro.fragment.Login
-import com.example.proyectsoreonline.Productos.fragment.ProductosFragment
 
 
-class RegistroActivity : AppCompatActivity() , Login.LoginCallBacks, Formulario.FormularioCallBacks, ProductosFragment.ProductosCallBacks {
+class RegistroActivity : AppCompatActivity() , Login.LoginCallBacks, Formulario.FormularioCallBacks, ProductosFragment.ProductosCallBacks, CarritoFragment.CarritoCallBacks {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,19 +90,19 @@ class RegistroActivity : AppCompatActivity() , Login.LoginCallBacks, Formulario.
         this.finish()
     }
 
-    fun callFragmentDomicilio() {
-//        val fragmentManager = supportFragmentManager
-//        val fragmentTransaction = fragmentManager.beginTransaction()
-//
-//
-//        val fragment = DomicilioFragment()
-//        fragmentTransaction.replace(R.id.contenedor, fragment)
-//        fragmentTransaction.addToBackStack("Domicilio")
-//        fragmentTransaction.commit()
+      override fun callFragmentDomicilio() {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
 
-        var intent = Intent(this, DomicilioActivity::class.java)
-        startActivity(intent)
-        this.finish()
+
+        val fragment = DomicilioFragment()
+        fragmentTransaction.replace(R.id.contenedor, fragment)
+        //fragmentTransaction.addToBackStack("Domicilio")
+        fragmentTransaction.commit()
+//
+//        var intent = Intent(this, DomicilioActivity::class.java)
+//        startActivity(intent)
+//          this.finish()
     }
 //
 //
@@ -112,4 +111,23 @@ class RegistroActivity : AppCompatActivity() , Login.LoginCallBacks, Formulario.
 //    }
 //
 
+
+//    override fun onBackPressed() {
+//        var canBack = true
+//        val fragment = supportFragmentManager.findFragmentById(R.id.fragment_formulario)
+//
+//        if (fragment is ProductosFragment)
+//            canBack = false
+//
+//        if (canBack)
+//            super.onBackPressed()
+//    }
+
+    override fun onBackPressed() {
+        if (true) {
+
+        } else {
+            super.onBackPressed()
+        }
+    }
 }

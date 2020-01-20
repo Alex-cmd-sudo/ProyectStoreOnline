@@ -45,7 +45,6 @@ class Login : TiFragment<LoginPresenter, LoginView>(), LoginView, ListenerDos{
     var code:Boolean=false
     var mensaje:String=""
 
-
     override fun providePresenter(): LoginPresenter {
         return LoginPresenter()
     }

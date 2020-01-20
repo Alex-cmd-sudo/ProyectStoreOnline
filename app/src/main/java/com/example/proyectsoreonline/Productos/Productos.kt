@@ -38,8 +38,6 @@ class Productos : AppCompatActivity() {
 
     }
 
-
-
     override fun onBackPressed() {
         var canBack = true
         val fragment = supportFragmentManager.findFragmentById(R.id.productos_root)

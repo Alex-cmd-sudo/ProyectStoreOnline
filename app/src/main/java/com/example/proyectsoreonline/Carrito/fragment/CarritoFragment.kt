@@ -2,23 +2,38 @@ package com.example.proyectsoreonline.Carrito.fragment
 
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyectsoreonline.Carrito.data.model.ElemtoDeCarrito
 import com.example.proyectsoreonline.Carrito.presentation.presenter.CarritoAdapter
 import com.example.proyectsoreonline.Carrito.presentation.presenter.CarritoPresenter
 import com.example.proyectsoreonline.Carrito.presentation.view.CarritoView
+import com.example.proyectsoreonline.Domicilio.DomicilioActivity
+import com.example.proyectsoreonline.Domicilio.fragment.DomicilioFragment
+import com.example.proyectsoreonline.Productos.Productos
 import com.example.proyectsoreonline.Productos.data.model.ListaProductos
 import com.example.proyectsoreonline.Productos.data.model.Productoss
+import com.example.proyectsoreonline.Productos.fragment.ProductosFragment
+import com.example.proyectsoreonline.Productos.presentation.presenter.MyAdapter
 
 import com.example.proyectsoreonline.R
+import com.example.proyectsoreonline.Registro.fragment.Formulario
+import com.example.proyectsoreonline.Registro.fragment.Login
+import com.tbruyelle.rxpermissions.RxPermissions
 import io.realm.Realm
 import io.realm.RealmList
 import io.realm.kotlin.where
+import kotlinx.android.synthetic.main.fragment_carrito.*
+import kotlinx.android.synthetic.main.fragment_ejemplo_consumo.*
+import kotlinx.android.synthetic.main.item_list_carrito.*
 import net.grandcentrix.thirtyinch.TiFragment
 
 /**
@@ -26,9 +41,30 @@ import net.grandcentrix.thirtyinch.TiFragment
  */
 class CarritoFragment : TiFragment<CarritoPresenter, CarritoView>(), CarritoView, CarritoAdapter.ItemClickListener {
 
+    interface CarritoCallBacks {
+         fun callFragmentDomicilio(){
+
+        }
+
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try {
+            mCallback = activity as CarritoCallBacks
+        }
+        catch (e:Exception){}
+    }
+
     override fun providePresenter(): CarritoPresenter {
         return CarritoPresenter()
     }
+
+    var mCallback : CarritoCallBacks?=  null
+
+    var adaptadorLista: CarritoAdapter? = null
+
+
 
     private lateinit var listaDeCarrito: RealmList<Productoss>
     private var listaElementosDeCarrito: ArrayList<ElemtoDeCarrito> = ArrayList()
@@ -47,15 +83,39 @@ class CarritoFragment : TiFragment<CarritoPresenter, CarritoView>(), CarritoView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var rxPermission = RxPermissions(activity!!)
 
         //TODO verificar elementos del carrito
-
+        //presenter.obtenerProductosDesdeStoreService()
         listaDeCarrito = obtenerElementosDeCarrito()
-        //poblarListaParaVisualizarElResumenDeCarrito(listaDeCarrito)
+
+        //pintarElementosLista(ArrayList())
+        //poblarListaParaVisualizarElResumenDeCarrito(listaDeCarrito,obtenerElementosDeCarrito())
+        //obtenerElementosDeCarrito()
+
+        //poblarListaParaVisualizarElResumenDeCarrito(listaDeCarrito,obtenerElementosDeCarrito())
         //consumir servicio de productos para verificar el stock
         presenter.obtenerProductosDesdeStoreService()
+        //obtenerElementosDeCarrito()
+//
+        btn_pagar.setOnClickListener{
+
+            //mCallback!!.callFragmentDomicilio()
+            var intent = Intent(context, DomicilioActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(context,"equisdeeeeeeeee",Toast.LENGTH_LONG).show()
+        }
+
     }
 
+    fun pintarElementosLista(carrito: ArrayList<ProductosFragment>) {
+
+        adaptadorLista = CarritoAdapter(context!!, carrito)
+        adaptadorLista!!.setClickListenerCarrito(this)
+        var miManager = LinearLayoutManager(context)
+        miRecyclerCarrito.layoutManager = miManager
+        miRecyclerCarrito.adapter =adaptadorLista
+    }
 
     override fun productosDesdeStoreService(articlesFromStoreService: List<Productoss>) {
         poblarListaParaVisualizarElResumenDeCarrito(listaDeCarrito, articlesFromStoreService)
@@ -133,5 +193,7 @@ private fun poblarListaParaVisualizarElResumenDeCarrito(listaDeCarrito: RealmLis
     override fun addToCart(position: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
+
+
 
 }

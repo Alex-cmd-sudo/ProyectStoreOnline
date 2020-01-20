@@ -23,4 +23,14 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+    override fun onBackPressed() {
+        var canBack = true
+        val fragment = supportFragmentManager.findFragmentById(R.id.root_layout)
+
+        if (fragment is ProductosFragment)
+            canBack = false
+
+        if (canBack)
+            super.onBackPressed()
+    }
 }

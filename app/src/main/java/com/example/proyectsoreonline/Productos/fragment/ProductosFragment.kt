@@ -32,13 +32,12 @@ import kotlin.collections.ArrayList
 /**
  * A simple [Fragment] subclass.
  */
-class ProductosFragment : TiFragment<ProductosPresenter, ProductosView>(), ProductosView,Listener, MyAdapter.ItemClickListener {
+open class ProductosFragment : TiFragment<ProductosPresenter, ProductosView>(), ProductosView,Listener, MyAdapter.ItemClickListener {
 
     private var indeterminateDialog: LoadingDialog? = null
     private lateinit var realm: Realm
 
     var adaptadorLista: MyAdapter? = null
-
 
     var mCallback : ProductosCallBacks?=  null
 
@@ -138,7 +137,9 @@ class ProductosFragment : TiFragment<ProductosPresenter, ProductosView>(), Produ
         realm = Realm.getDefaultInstance()
 
         realm.executeTransaction {
+
             var carrito = realm.where<ListaProductos>().findFirst()
+
             if (carrito == null){//el carrito en base no existe y se tiene que crear
 
                     carrito = realm.createObject()}

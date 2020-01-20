@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Registro.fragment.Formulario"
     android:id="@+id/fragment_formulario">
 
@@ -21,6 +22,8 @@
 
             <EditText
                 android:id="@+id/et_name"
+
+                android:textColor="@color/agustin"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -28,15 +31,16 @@
                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZüéáíóúñÑ"
                 android:hint="Nombre"
                 android:maxLength="50"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/agustin" />
 
             <EditText
                 android:id="@+id/et_paterno"
+                android:textColor="@color/agustin"
                 android:hint="Apellido Paterno"
                 android:maxLength="50"
                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZüéáíóúñÑ"
                 android:inputType="textPersonName"
-                android:textColorHint="@color/colorPrimary"
+                android:textColorHint="@color/agustin"
                 android:layout_width="350dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
@@ -47,8 +51,9 @@
                 android:hint="Apellido Materno"
                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZüéáíóúñÑ"
                 android:maxLength="50"
-                android:textColorHint="@color/colorPrimary"
+                android:textColorHint="@color/agustin"
                 android:layout_width="350dp"
+                android:textColor="@color/agustin"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"/>
@@ -56,38 +61,68 @@
             <EditText
                 android:id="@+id/et_correo"
                 android:hint="Correo"
-                android:textColorHint="@color/colorPrimary"
+                android:textColorHint="@color/agustin"
                 android:layout_width="350dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:textColor="@color/agustin"
                 android:maxLength="50"
                 android:digits="abcdefghijklmnopqrstuvwxyz@._-1234567890·$%!'?¿\|\#~/()"
                 android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                app:passwordToggleEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="50"
+                android:textColorHint="@color/agustin"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
 
             <EditText
                 android:id="@+id/et_contrasena"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:textColor="@color/agustin"
                 android:layout_marginTop="20dp"
                 android:hint="Contraseña"
                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
                 android:inputType="textPassword"
                 android:maxLength="50"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/agustin" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:counterMaxLength="50"
+                app:passwordToggleEnabled="true"
+                android:textColorHint="@color/agustin"
+                app:counterEnabled="true"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/et_confirmacion"
                 android:hint="Confirmar contraseña"
                 android:inputType="textPassword"
-                android:textColorHint="@color/colorPrimary"
+                android:textColorHint="@color/agustin"
+                app:counterMaxLength="50"
                 android:layout_width="350dp"
+                app:counterEnabled="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:maxLength="50"
                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
                 android:layout_height="wrap_content"/>
 
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -128,6 +163,7 @@
                 <Button
                     android:id="@+id/btn_anverso"
                     android:layout_marginTop="20dp"
+                    android:background="@drawable/borde_redondo"
                     android:text="Anverso"
                     android:layout_margin="25dp"
                     android:layout_width="wrap_content"
@@ -143,6 +179,7 @@
                 <Button
                     android:id="@+id/btn_reverso"
                     android:text="Reverso"
+                    android:background="@drawable/borde_redondo"
                     android:layout_margin="25dp"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
@@ -165,8 +202,8 @@
                     android:layout_height="wrap_content"/>
 
                 <Switch
-                    android:trackTint="@color/blanco"
-                    android:thumbTint="@color/blanco"
+                    android:trackTint="@color/agustin"
+                    android:thumbTint="@color/agustin"
                     android:textColor="@color/colorPrimary"
                     android:id="@+id/identificacion"
                     android:layout_width="wrap_content"
@@ -223,17 +260,19 @@
 
                 <Button
                     android:id="@+id/btn_volver"
-                    android:layout_gravity="center"
-                    android:text="Volver"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/borde_redondo"
+                    android:text="Volver" />
 
                 <Button
                     android:id="@+id/btn_guardar"
-                    android:layout_gravity="center"
-                    android:text="  Guardar  "
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/borde_redondo"
+                    android:text="  Guardar  " />
 
 
             </LinearLayout>
