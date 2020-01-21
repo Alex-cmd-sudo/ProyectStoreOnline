@@ -38,14 +38,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
         android:layout_marginTop="64dp"
-        android:text="Vigencia"
+        android:hint="Vigencia"
         android:maxLength="5"
         android:digits="0123456789/"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_cvv" />
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/et_cvv"
@@ -60,16 +56,12 @@
 
     <Button
         android:layout_gravity="center_horizontal"
-        android:id="@+id/button"
+        android:id="@+id/btn_pagar"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="Pagar"
-        android:background="@drawable/borde_redondo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_titular" />
+        android:background="@drawable/borde_redondo" />
 
     <TextView
         android:id="@+id/textView"
@@ -79,8 +71,6 @@
         android:layout_marginTop="44dp"
         android:text="Cancelar"
         android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        />
 
 </LinearLayout>

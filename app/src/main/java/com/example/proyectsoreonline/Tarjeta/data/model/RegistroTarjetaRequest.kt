@@ -1,24 +1,25 @@
 package com.example.proyectsoreonline.Tarjeta.data.model
 
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 class RegistroTarjetaRequest {
 
     @SerializedName("numeroTarjeta")
-
+    @Expose
     private var numero: String? = null
 
-    @SerializedName("fechaDeVigeciaTarjeta")
-
-    private var vigencia: String? = null
+    @SerializedName("nombreCompletoTitular")
+    @Expose
+    private var titular: String? = null
 
     @SerializedName("cvv")
-
+    @Expose
     private var cvv: String? = null
 
-    @SerializedName("nombreCompletoTitular")
-
-    private var titular: String? = null
+    @SerializedName("fechaDeVigeciaTarjeta")
+    @Expose
+    private var vigencia: String? = null
 
 
     fun getNumero(): String? {
